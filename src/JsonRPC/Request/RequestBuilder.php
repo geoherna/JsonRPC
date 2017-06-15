@@ -121,7 +121,9 @@ class RequestBuilder
         ));
 
         if (! empty($this->params)) {
-            $payload['params'] = $this->params;
+            $payload['params'] = [];
+            $payload['params'][0] = [];
+            $payload['params'][0][0] = $this->params;
         }
 
         return json_encode($payload);
